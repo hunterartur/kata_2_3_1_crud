@@ -31,18 +31,7 @@
 
             <th:block th:each="user : ${users}">
                 <tr>
-
-                    <div class="dropdown">
-                        <div class="dropbtn"  >
-                        <td th:text="${user.getId()}"></td>
-                            <div class="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
-                        </div>
-                    </div>
-
+                    <td th:text="${user.getId()}"></td>
                     <td th:text="${user.getName()}"></td>
                     <td th:text="${user.getLastname()}"></td>
                     <td th:text="${user.getAge()}"></td>

@@ -32,15 +32,13 @@ public class UserController {
     }
 
     @GetMapping(value = "/createUser")
-    public String createUser() {
+    public String createUser(ModelMap model) {
+        model.addAttribute("user", new User());
         return "createUser";
     }
 
     @GetMapping("/saveUser")
-    public String saveUser(@RequestParam String name, @RequestParam String lastname,
-                           @RequestParam byte age, @RequestParam String hobby,
-                           @RequestParam(defaultValue = "Man") String sex) {
-        User user = new User(name, lastname, age, hobby, (sex.equals("Woman")) ? Sex.Woman : Sex.Man);
+    public String saveUser(User user) {
         userService.save(user);
         return "redirect:/";
     }
