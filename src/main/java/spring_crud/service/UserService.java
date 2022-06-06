@@ -12,7 +12,7 @@ public interface UserService {
     User getUserById(Long id);
     List<User> getUserByNameAndLastname(String name, String lastname);
 
-    void updateUserById(long id, User user);
+    void updateUserById(Long id, User user);
 
     void removeUserById(Long id);
     void cleanTableUsers();

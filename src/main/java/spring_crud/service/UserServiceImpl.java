@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public void updateUserById(long id, User user) {
+    public void updateUserById(Long id, User user) {
         userDAO.updateUserById(id, user);
     }
 

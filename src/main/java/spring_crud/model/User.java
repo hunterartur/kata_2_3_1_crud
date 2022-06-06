@@ -1,8 +1,5 @@
 package spring_crud.model;
 
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import javax.persistence.*;
 
 @Entity
@@ -20,27 +17,23 @@ public class User {
     private String lastname;
 
     @Column(name = "age")
-    private Byte age;
+    private byte age;
 
     @Column(name = "hobby")
     private String hobby;
 
     @Column(name = "sex")
-    private Character sex;
-
-    @Column(name = "is_president")
-    private Boolean isPresident;
+    private Sex sex;
 
     public User() {
     }
 
-    public User(String name, String lastname, byte age, String hobby, char sex, boolean isPresident) {
+    public User(String name, String lastname, byte age, String hobby, Sex sex) {
         this.name = name;
         this.lastname = lastname;
         this.age = age;
         this.hobby = hobby;
         this.sex = sex;
-        this.isPresident = isPresident;
     }
 
     public Long getId() {
@@ -79,20 +72,12 @@ public class User {
         this.hobby = hobby;
     }
 
-    public char getSex() {
+    public Sex getSex() {
         return sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
-    }
-
-    public boolean isPresident() {
-        return isPresident;
-    }
-
-    public void setPresident(boolean president) {
-        isPresident = president;
     }
 
     @Override
@@ -104,7 +89,6 @@ public class User {
                 ", age=" + age +
                 ", hobby='" + hobby + '\'' +
                 ", sex=" + sex +
-                ", isPresident=" + isPresident +
                 '}';
     }
 }

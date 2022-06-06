@@ -19,16 +19,15 @@
             </ul>
         </nav>
 
-        <form class="decor" th:action="@{/saveUser}" th:object="${user}">
+        <form class="decor" th:action="@{/saveUser}">
             <div class="circle"></div>
             <div class="form-inner">
                 <h3>Create new user</h3>
-                <input type="text" name="name" th:value="${user.getName()}" placeholder="name">
-                <input type="text" name="lastname" th:value="${user.getLastname()}" placeholder="Lastname">
-                <input type="text" name="age" th:value="${user.getAge()}" placeholder="age">
-                <input type="text" name="hobby" th:value="${user.getHobby()}" placeholder="hobby">
-                <input type="text" name="sex" th:value="${user.getSex()}" placeholder="sex">
-                <input type="text" name="isPresident" th:value="${user.isPresident()}" placeholder="isPresident">
+                <input type="text" name="name" placeholder="name" required>
+                <input type="text" name="lastname" placeholder="Lastname" required>
+                <input type="text" name="age" placeholder="age" required>
+                <input type="text" name="hobby" placeholder="hobby" required>
+                <input type="text" name="sex" placeholder="sex" required>
                 <input type="submit" value="Send">
             </div>
         </form>
