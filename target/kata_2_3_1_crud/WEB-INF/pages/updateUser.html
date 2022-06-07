@@ -21,9 +21,13 @@
             <div class="form-inner">
                 <h3>Update new user</h3>
                 <input type="hidden" name="id" th:field="*{id}" placeholder="id">
+                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
                 <input type="text" name="name" th:field="*{name}" placeholder="name" required>
+                <p th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Name Error</p>
                 <input type="text" name="lastname" th:field="*{lastname}" placeholder="Lastname" required>
+                <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name Error</p>
                 <input type="text" name="age" th:field="*{age}" placeholder="age" required>
+                <p th:if="${#fields.hasErrors('hobby')}" th:errors="*{hobby}">Name Error</p>
                 <input type="text" name="hobby" th:field="*{hobby}" placeholder="hobby" required>
                 <select th:field="*{sex}">
                     <option th:value="Man" th:text="Male"></option>

@@ -56,9 +56,13 @@ public class UserController {
     }
 
     @GetMapping("/refreshUser")
-    public String refreshUser(@ModelAttribute User user) {
-        userService.updateUserById(user.getId(), user);
-        return "redirect:/";
+    public String refreshUser(@Valid @ModelAttribute User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "/updateUser";
+        } else {
+            userService.updateUserById(user.getId(), user);
+            return "redirect:/";
+        }
     }
 
     @GetMapping(value = "/deleteUser")
