@@ -1,13 +1,13 @@
 package spring_crud.service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import spring_crud.dao.UserDAO;
 import spring_crud.model.User;
 
 import java.util.List;
 
-@Component
+@Service
 public class UserServiceImpl implements UserService {
 
     private UserDAO userDAO;

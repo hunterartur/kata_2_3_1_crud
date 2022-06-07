@@ -31,12 +31,13 @@
 
             <th:block th:each="user : ${users}">
                 <tr>
-                    <td th:text="${user.getId()}"></td>
-                    <td th:text="${user.getName()}"></td>
-                    <td th:text="${user.getLastname()}"></td>
-                    <td th:text="${user.getAge()}"></td>
-                    <td th:text="${user.getHobby()}"></td>
-                    <td th:text="${user.getSex()}"></td>
+                    <td th:text="${user.id}"></td>
+                    <td ><a th:href="@{/updateUser(id=${user.id})}" th:text="${user.name}"></a></td>
+<!--                    <td th:text="${user.getName()}"></td>-->
+                    <td th:text="${user.lastname}"></td>
+                    <td th:text="${user.age}"></td>
+                    <td th:text="${user.hobby}"></td>
+                    <td th:text="${user.sex}"></td>
                 </tr>
             </th:block>
         </table>

@@ -5,12 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+
 import org.springframework.web.bind.annotation.RequestParam;
-import spring_crud.model.Sex;
 import spring_crud.model.User;
 import spring_crud.service.UserService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -38,14 +37,22 @@ public class UserController {
     }
 
     @GetMapping("/saveUser")
-    public String saveUser(User user) {
+    public String saveUser(@ModelAttribute User user) {
         userService.save(user);
         return "redirect:/";
     }
 
     @GetMapping(value = "/updateUser")
-    public String updateUser() {
+    public String updateUser(Model model, @RequestParam Long id) {
+        User user = userService.getUserById(id);
+        model.addAttribute("user", user);
         return "updateUser";
+    }
+
+    @GetMapping("/refreshUser")
+    public String refreshUser(@ModelAttribute User user, @RequestParam ) {
+        userService.updateUserById(user);
+        return "redirect:/";
     }
 
     @GetMapping(value = "/deleteUser")

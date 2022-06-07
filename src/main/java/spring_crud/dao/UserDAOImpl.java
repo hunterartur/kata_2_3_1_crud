@@ -1,14 +1,13 @@
 package spring_crud.dao;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import spring_crud.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.HashMap;
 import java.util.List;
 
-@Component
+@Repository
 public class UserDAOImpl implements UserDAO {
 
     @PersistenceContext
