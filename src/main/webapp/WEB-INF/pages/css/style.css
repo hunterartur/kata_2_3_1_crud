@@ -68,7 +68,7 @@
 .form-inner {
     padding: 50px;
 }
-.form-inner input, .form-inner select {
+.form-inner input, .form-inner select, .form-inner option {
     display: block;
     width: 100%;
     padding: 0 20px;
@@ -87,7 +87,7 @@
     font-size: 14px;
 }
 
-.form-inner select {
+.form-inner select, .form-inner option {
     display: block;
     width: 100%;
     padding: 0 20px;
@@ -184,3 +184,5 @@ nav {
 /* body {
    background: #f69a73;
 } */
+
+

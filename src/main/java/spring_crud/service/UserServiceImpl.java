@@ -36,12 +36,6 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public List<User> getUserByNameAndLastname(String name, String lastname) {
-        return userDAO.getUserByNameAndLastname(name, lastname);
-    }
-
-    @Transactional
-    @Override
     public void updateUserById(Long id, User user) {
         userDAO.updateUserById(id, user);
     }

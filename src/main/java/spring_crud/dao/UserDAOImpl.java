@@ -29,14 +29,6 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List<User> getUserByNameAndLastname(String name, String lastname) {
-        return em.createQuery("from User u where u.name=:name and u.lastname=:lastname", User.class)
-                .setParameter("name", name)
-                .setParameter("lastname", lastname)
-                .getResultList();
-    }
-
-    @Override
     public void updateUserById(Long id, User user) {
         User uUser = em.find(User.class, id);
         uUser.setName(user.getName());

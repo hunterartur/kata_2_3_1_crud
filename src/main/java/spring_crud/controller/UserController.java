@@ -3,6 +3,7 @@ package spring_crud.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import spring_crud.model.User;
 import spring_crud.service.UserService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -37,9 +39,13 @@ public class UserController {
     }
 
     @GetMapping("/saveUser")
-    public String saveUser(@ModelAttribute User user) {
-        userService.save(user);
-        return "redirect:/";
+    public String saveUser(@Valid @ModelAttribute User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "createUser";
+        } else {
+            userService.save(user);
+            return "redirect:/";
+        }
     }
 
     @GetMapping(value = "/updateUser")
@@ -50,18 +56,15 @@ public class UserController {
     }
 
     @GetMapping("/refreshUser")
-    public String refreshUser(@ModelAttribute User user, @RequestParam ) {
-        userService.updateUserById(user);
+    public String refreshUser(@ModelAttribute User user) {
+        userService.updateUserById(user.getId(), user);
         return "redirect:/";
     }
 
     @GetMapping(value = "/deleteUser")
-    public String deleteUser() {
-        return "deleteUser";
+    public String deleteUser(@RequestParam Long id) {
+        userService.removeUserById(id);
+        return "redirect:/";
     }
 
-    @GetMapping(value = "/readUser")
-    public String readUser() {
-        return "readUser";
-    }
 }
