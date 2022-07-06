@@ -1,6 +1,6 @@
-package spring_crud.service;
+package springCrud.service;
 
-import spring_crud.model.User;
+import springCrud.model.User;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package spring_crud.config;
+package springCrud.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,7 +20,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:hibernate.properties")
 @EnableTransactionManagement
-@ComponentScan("spring_crud")
+@ComponentScan("springCrud")
 public class HibernateConfig {
 
     private Environment env;
@@ -43,7 +43,7 @@ public class HibernateConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(getDataSource());
-        em.setPackagesToScan(new String[]{"spring_crud"});
+        em.setPackagesToScan(new String[]{"springCrud"});
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);

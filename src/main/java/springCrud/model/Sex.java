@@ -1,4 +1,4 @@
-package spring_crud.model;
+package springCrud.model;
 
 public enum Sex {
     Man,

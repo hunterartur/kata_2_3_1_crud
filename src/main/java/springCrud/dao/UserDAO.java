@@ -1,6 +1,6 @@
-package spring_crud.dao;
+package springCrud.dao;
 
-import spring_crud.model.User;
+import springCrud.model.User;
 
 import java.util.List;
 

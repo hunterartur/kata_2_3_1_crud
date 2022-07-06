@@ -1,4 +1,4 @@
-package spring_crud.config;
+package springCrud.config;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
-@ComponentScan("spring_crud")
+@ComponentScan("springCrud")
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 

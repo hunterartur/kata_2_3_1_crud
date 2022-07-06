@@ -1,11 +1,11 @@
-package spring_crud;
+package springCrud;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import spring_crud.config.HibernateConfig;
-import spring_crud.model.Sex;
-import spring_crud.model.User;
-import spring_crud.service.UserService;
+import springCrud.config.HibernateConfig;
+import springCrud.model.Sex;
+import springCrud.model.User;
+import springCrud.service.UserService;
 
 import java.util.List;
 

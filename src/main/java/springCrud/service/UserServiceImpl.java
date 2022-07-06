@@ -1,9 +1,9 @@
-package spring_crud.service;
+package springCrud.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import spring_crud.dao.UserDAO;
-import spring_crud.model.User;
+import springCrud.dao.UserDAO;
+import springCrud.model.User;
 
 import java.util.List;
 
@@ -46,13 +46,11 @@ public class UserServiceImpl implements UserService {
         userDAO.removeUserById(id);
     }
 
-    @Transactional
     @Override
     public void cleanTableUsers() {
         userDAO.cleanTableUsers();
     }
 
-    @Transactional
     @Override
     public void deleteTableUsers() {
         userDAO.deleteTableUsers();

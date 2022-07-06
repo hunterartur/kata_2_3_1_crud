@@ -1,4 +1,4 @@
-package spring_crud.model;
+package springCrud.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;

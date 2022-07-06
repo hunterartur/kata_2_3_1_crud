@@ -1,15 +1,13 @@
-package spring_crud.controller;
+package springCrud.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RequestParam;
-import spring_crud.model.User;
-import spring_crud.service.UserService;
+import springCrud.model.User;
+import springCrud.service.UserService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -38,7 +36,7 @@ public class UserController {
         return "createUser";
     }
 
-    @GetMapping("/saveUser")
+    @PostMapping("/saveUser")
     public String saveUser(@Valid @ModelAttribute User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "createUser";
@@ -55,7 +53,7 @@ public class UserController {
         return "updateUser";
     }
 
-    @GetMapping("/refreshUser")
+    @PutMapping("/refreshUser")
     public String refreshUser(@Valid @ModelAttribute User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "/updateUser";
@@ -65,9 +63,9 @@ public class UserController {
         }
     }
 
-    @GetMapping(value = "/deleteUser")
-    public String deleteUser(@RequestParam Long id) {
-        userService.removeUserById(id);
+    @DeleteMapping(value = "/deleteUser")
+    public String deleteUser(@ModelAttribute User user) {
+        userService.removeUserById(user.getId());
         return "redirect:/";
     }
 
